@@ -1,4 +1,5 @@
 
+#include <unistd.h>
 #include "clrout.h"
 
 const char* ansi_color_codes[] = {
@@ -29,8 +30,15 @@ const char* ansi_color_codes[] = {
    "\033[47m"
 };
 
+bool supports_color(FILE* stream)
+{
+   return isatty(fileno(stream));
+}
+
 void set_out_color(FILE* stream, OutColor_t out_color)
 {
-   fputs(ansi_color_codes[out_color], stream);
+   if (supports_color(stream)) {
+      fputs(ansi_color_codes[out_color], stream);
+   }
 }
 
