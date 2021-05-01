@@ -28,7 +28,7 @@ OBJECTS := $(BUILD_DIR)/clrout.o
 HEADER_FILES := clrout.h
 
 $(LIB): $(OBJECTS) $(BIN_DIR)
-	ar ru $@ $(OBJECTS) 
+	ar r $@ $(OBJECTS) 
 	ranlib $@
 
 $(BIN_DIR):
@@ -40,4 +40,7 @@ $(OBJECTS): $(BUILD_DIR)/%.o: %.c $(HEADER_FILES) $(BUILD_DIR)
 $(BUILD_DIR):
 	mkdir -p $@	
 
+clean:
+	rm -r $(BUILD_DIR)
+	rm -r $(BIN_DIR)
 
