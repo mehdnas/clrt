@@ -65,5 +65,5 @@ $(CLROUT_O): $(CLROUT_C) $(CLROUT_O_HEADERS)
 	$(COBJ) $@ $<
 
 clean:
-	rm -r $(BUILD_DIR)
+	if [ -d "$(BUILD_DIR)" ]; then rm -r $(BUILD_DIR); fi
 
