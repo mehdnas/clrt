@@ -1,5 +1,6 @@
 
 #include <unistd.h>
+
 #include "clrout.h"
 
 const char* ansi_color_codes[] = {
