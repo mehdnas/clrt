@@ -1,4 +1,26 @@
 ###########################################
+# Project directories and files ###########
+###########################################
+
+# compilation and build directories
+BIN_DIR := ./bin
+BUILD_DIR := ./build
+
+# Header files
+CLROUT_H := clrout.h
+
+# Source files
+CLROUT_C := clrout.c
+
+# Object files
+CLROUT_O := $(BUILD_DIR)/$(CLROUT_C:.c=.o)
+CLROUT_O_HEADERS := $(CLROUT_H)
+
+# Library
+CLROUT_LIB := $(BIN_DIR)/libclrout.a
+CLROUT_LIB_OBJS := $(CLROUT_O)
+
+###########################################
 # Compilation commands ####################
 ###########################################
 
@@ -21,28 +43,6 @@ COBJ := $(CC) $(CFLAGS) $(GCC_INC_DIRS) $(GCC_DEFS) $(OBJ_COMPILATION_FLAGS)
 CEXE := $(CC) $(CFLAGS) $(GCC_LIB_DIRS) $(LINKER_FLAGS)
 # compile a library directory
 MAKE_LIB := make -C
-
-###########################################
-# Project directories and files ###########
-###########################################
-
-# compilation and build directories
-BIN_DIR := ./bin
-BUILD_DIR := ./build
-
-# Header files
-CLROUT_H := clrout.h
-
-# Source files
-CLROUT_C := clrout.c
-
-# Object files
-CLROUT_O := $(BUILD_DIR)/$(CLROUT_C:.c=.o)
-CLROUT_O_HEADERS := $(CLROUT_H)
-
-# Library
-CLROUT_LIB := $(BIN_DIR)/libclrout.a
-CLROUT_LIB_OBJS := $(CLROUT_O)
 
 ###########################################
 # Compilation rules and recipes ##########
