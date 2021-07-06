@@ -1,13 +1,14 @@
 
-#Los ejecutables
+# Executables
 *
-# Excluye los ficheros que no son ejecutables
 !*/
 !*.*
-!makefile
 
-#los ficheros de vim
+# Vim's swap files
 *.swp
+
+# Build directory
+**/build/
 
 #Los ficheros generados por los programas que ejecutamos
 *.stats
